@@ -1,3 +1,7 @@
+# vi temp undo files #
+*.un~
+
+# Class files #
 *.class
 
 # Package Files #
