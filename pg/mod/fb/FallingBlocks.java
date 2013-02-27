@@ -25,7 +25,7 @@ public class FallingBlocks {
     @SidedProxy(clientSide = Info.CLIENT_PROXY_CLASS, serverSide = Info.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
 
-	public static int FALLING_OILSAND;
+	public static int UNSTABLE_BLOCK_ID;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {

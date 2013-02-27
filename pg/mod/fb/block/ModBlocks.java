@@ -8,13 +8,13 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks {
 
-	public static Block oilSand;
+	public static Block unstableBlock;
 	
 	public static void init() {
-		oilSand          = new BlockOilSand(BlockIDs.OILSAND, 18);
+		unstableBlock          = new BlockUnstable(BlockIDs.UNSTABLE_BLOCK, 18);
 		
-		GameRegistry.registerBlock(oilSand, Constants.OILSAND_NAME);
-		LanguageRegistry.addName(oilSand, "Oil Sand");
+		GameRegistry.registerBlock(unstableBlock, Constants.UNSTABLE_BLOCK_NAME);
+		LanguageRegistry.addName(unstableBlock, "Oil Sand");
 	
 	}
 

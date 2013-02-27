@@ -11,7 +11,7 @@ public class RenderBlocks extends net.minecraft.client.renderer.RenderBlocks {
 	
 	public RenderBlocks() { super(); }
 	
-	public void renderFallingOilSand(Block block, World world, int x, int y, int z, int metadata)
+	public void renderFallingBlock(Block block, World world, int x, int y, int z, int metadata)
     {
         Tessellator tessellator = Tessellator.instance;
         
@@ -23,22 +23,23 @@ public class RenderBlocks extends net.minecraft.client.renderer.RenderBlocks {
         this.renderMaxY = 1.0;
         this.renderMinZ = 0.0;
         this.renderMaxZ = 1.0;
+        double offset = -0.5D;
         
         tessellator.startDrawingQuads();
         
         tessellator.setColorOpaque_F(0.5F, 0.5F, 0.5F);
-        this.renderBottomFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
+        this.renderBottomFace(block, offset, offset, offset, block.blockIndexInTexture);
 
         tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
-        this.renderTopFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
+        this.renderTopFace(block, offset, offset, offset, block.blockIndexInTexture);
 
         tessellator.setColorOpaque_F(0.8F,0.8F,0.8F);
-        this.renderEastFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
-        this.renderWestFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
+        this.renderEastFace(block, offset, offset, offset, block.blockIndexInTexture);
+        this.renderWestFace(block, offset, offset, offset, block.blockIndexInTexture);
 
         tessellator.setColorOpaque_F(0.6F,0.6F,0.6F);
-        this.renderNorthFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
-        this.renderSouthFace(block, -0.50D, -0.50D, -0.50D, block.blockIndexInTexture);
+        this.renderNorthFace(block, offset, offset, offset, block.blockIndexInTexture);
+        this.renderSouthFace(block, offset, offset, offset, block.blockIndexInTexture);
         
         tessellator.draw();
     }

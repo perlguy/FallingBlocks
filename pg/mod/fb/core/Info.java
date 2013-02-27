@@ -15,7 +15,7 @@ public class Info {
 
     /* General Mod related constants */
     public static final String MOD_ID = "FB1";
-    public static final String MOD_NAME = "FallingBlock";
+    public static final String MOD_NAME = "FallingBlocks";
     public static final String VERSION = "@VERSION@";
     public static final String CHANNEL_NAME = MOD_ID;
     public static final int TPS = 20;

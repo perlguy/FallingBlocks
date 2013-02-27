@@ -12,11 +12,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderFallingOilSand extends Render
+public class RenderFallingBlock extends Render
 {
 	private RenderBlocks blockRenderer = new RenderBlocks();
 
-	public RenderFallingOilSand() {}
+	public RenderFallingBlock() {}
 
 	/**
 	 * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
@@ -26,7 +26,7 @@ public class RenderFallingOilSand extends Render
 	 */
 	public void doRender(Entity entity, double x, double y, double z, float par8, float par9)
 	{
-		FallingOilSand entityFallingOilSand = (FallingOilSand)entity;
+		FallingBlock fallingBlock = (FallingBlock)entity;
 		
 		int xi = MathHelper.floor_double(x);
 		int yi = MathHelper.floor_double(y);
@@ -37,7 +37,7 @@ public class RenderFallingOilSand extends Render
 		GL11.glTranslatef((float)x, (float)y, (float)z);
         GL11.glDisable(GL11.GL_LIGHTING);
 
-		blockRenderer.renderFallingOilSand(ModBlocks.oilSand, entityFallingOilSand.getWorld(), xi, yi, zi, 0);
+		blockRenderer.renderFallingBlock(ModBlocks.unstableBlock, fallingBlock.getWorld(), xi, yi, zi, 0);
 
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glPopMatrix();

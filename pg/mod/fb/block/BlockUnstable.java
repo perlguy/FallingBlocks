@@ -6,15 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
-import pg.mod.fb.block.entity.FallingOilSand;
-import pg.mod.fb.core.BlockIDs;
+import pg.mod.fb.block.entity.FallingBlock;
 import pg.mod.fb.core.Constants;
 
-public class BlockOilSand extends Block {
+public class BlockUnstable extends Block {
 	
-	public BlockOilSand(int id, int texture) {
+	public BlockUnstable(int id, int texture) {
 		super(id, texture, Material.sand);
-		setBlockName(Constants.OILSAND_NAME)
+		setBlockName(Constants.UNSTABLE_BLOCK_NAME)
 		.setStepSound(soundSandFootstep);
         this.setCreativeTab(CreativeTabs.tabBlock);
 	}
@@ -65,7 +64,9 @@ public class BlockOilSand extends Block {
             {
                 if (!world.isRemote)
                 {
-                	FallingOilSand entity = new FallingOilSand(world, (double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), BlockIDs.OILSAND, 0);
+                	double off = 0.5D;
+                	FallingBlock entity = new FallingBlock(world);
+                	entity.setPosition((double)x+off, (double)y+off, (double)z+off);
                     this.onStartFalling(entity);
                     world.spawnEntityInWorld(entity);
                 }
@@ -91,7 +92,7 @@ public class BlockOilSand extends Block {
     /**
      * Called when the falling block entity for this block is created
      */
-    protected void onStartFalling(FallingOilSand entity) {}
+    protected void onStartFalling(FallingBlock entity) {}
 
     /**
      * How many world ticks before ticking
