@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import pg.mod.fb.block.BlockUnstable;
+import pg.mod.fb.block.UnstableBlock;
 import pg.mod.fb.block.ModBlocks;
 import pg.mod.fb.core.BlockIDs;
 import cpw.mods.fml.relauncher.Side;
@@ -105,10 +105,10 @@ public class FallingBlock extends Entity {
 					{
 						this.setDead();
 						if (this.worldObj.canPlaceEntityOnSide(this.blockID, xi, yi, zi, true, 1, (Entity)null) && 
-								!BlockUnstable.canFallBelow(this.worldObj, xi, yi - 1, zi) && 
+								!UnstableBlock.canFallBelow(this.worldObj, xi, yi - 1, zi) && 
 								this.worldObj.setBlockAndMetadataWithNotify(xi, yi, zi, this.blockID, this.metadata))
 						{
-							((BlockUnstable)ModBlocks.unstableBlock).onFinishFalling(this.worldObj, xi, yi, zi, metadata);
+							((UnstableBlock)ModBlocks.unstableBlock).onFinishFalling(this.worldObj, xi, yi, zi, metadata);
 						}
 						else if (this.shouldDropItem)
 						{

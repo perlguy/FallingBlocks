@@ -24,7 +24,7 @@ public class RenderFallingBlock extends Render
 	 * (Render<T extends Entity) and this method has signature public void doRender(T entity, double d, double d1,
 	 * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
 	 */
-	public void doRender(Entity entity, double x, double y, double z, float par8, float par9)
+	public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTickTime)
 	{
 		FallingBlock fallingBlock = (FallingBlock)entity;
 		

@@ -26,9 +26,6 @@ public class RenderBlocks extends net.minecraft.client.renderer.RenderBlocks {
         double offset = -0.5D;
         
         tessellator.startDrawingQuads();
-        
-        tessellator.setColorOpaque_F(0.5F, 0.5F, 0.5F);
-        this.renderBottomFace(block, offset, offset, offset, block.blockIndexInTexture);
 
         tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
         this.renderTopFace(block, offset, offset, offset, block.blockIndexInTexture);
@@ -40,6 +37,9 @@ public class RenderBlocks extends net.minecraft.client.renderer.RenderBlocks {
         tessellator.setColorOpaque_F(0.6F,0.6F,0.6F);
         this.renderNorthFace(block, offset, offset, offset, block.blockIndexInTexture);
         this.renderSouthFace(block, offset, offset, offset, block.blockIndexInTexture);
+
+        tessellator.setColorOpaque_F(0.5F, 0.5F, 0.5F);
+        this.renderBottomFace(block, offset, offset, offset, block.blockIndexInTexture);
         
         tessellator.draw();
     }
