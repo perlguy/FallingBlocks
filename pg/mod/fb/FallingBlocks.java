@@ -36,7 +36,7 @@ public class FallingBlocks {
     	
         ModBlocks.init();
         
-        proxy.registerEntities();
+        proxy.registerEntities(instance);
         
         proxy.initRenderersAndTextures();
     	  	
